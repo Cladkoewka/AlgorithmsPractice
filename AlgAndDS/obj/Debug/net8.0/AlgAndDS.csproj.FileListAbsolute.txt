@@ -1,0 +1,14 @@
+D:\PetProjects\AlgAndDS\AlgAndDS\bin\Debug\net8.0\AlgAndDS.exe
+D:\PetProjects\AlgAndDS\AlgAndDS\bin\Debug\net8.0\AlgAndDS.deps.json
+D:\PetProjects\AlgAndDS\AlgAndDS\bin\Debug\net8.0\AlgAndDS.runtimeconfig.json
+D:\PetProjects\AlgAndDS\AlgAndDS\bin\Debug\net8.0\AlgAndDS.dll
+D:\PetProjects\AlgAndDS\AlgAndDS\bin\Debug\net8.0\AlgAndDS.pdb
+D:\PetProjects\AlgAndDS\AlgAndDS\obj\Debug\net8.0\AlgAndDS.GeneratedMSBuildEditorConfig.editorconfig
+D:\PetProjects\AlgAndDS\AlgAndDS\obj\Debug\net8.0\AlgAndDS.AssemblyInfoInputs.cache
+D:\PetProjects\AlgAndDS\AlgAndDS\obj\Debug\net8.0\AlgAndDS.AssemblyInfo.cs
+D:\PetProjects\AlgAndDS\AlgAndDS\obj\Debug\net8.0\AlgAndDS.csproj.CoreCompileInputs.cache
+D:\PetProjects\AlgAndDS\AlgAndDS\obj\Debug\net8.0\AlgAndDS.dll
+D:\PetProjects\AlgAndDS\AlgAndDS\obj\Debug\net8.0\refint\AlgAndDS.dll
+D:\PetProjects\AlgAndDS\AlgAndDS\obj\Debug\net8.0\AlgAndDS.pdb
+D:\PetProjects\AlgAndDS\AlgAndDS\obj\Debug\net8.0\AlgAndDS.genruntimeconfig.cache
+D:\PetProjects\AlgAndDS\AlgAndDS\obj\Debug\net8.0\ref\AlgAndDS.dll
