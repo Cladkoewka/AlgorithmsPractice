@@ -1,8 +1,7 @@
 ﻿using AlgAndDS.AlgorithmTasks;
 
-int[] prices1 = [7,1,5,3,6,4];
-int[] prices2 = [7, 6, 4, 3, 1];
+int?[] treeArray = new int?[] { 3, 9, 20, null, null, 15, 7 };
+LeetcodeTasks.TreeNode tree = LeetcodeTasks.TreeBuilder.BuildTree(treeArray);
 
-Console.WriteLine(LeetcodeTasks.MaxProfit(prices1));
-Console.WriteLine(LeetcodeTasks.MaxProfit(prices2));
+Console.WriteLine(LeetcodeTasks.MaxDepth(tree));
 

@@ -12,3 +12,4 @@ D:\PetProjects\AlgAndDS\AlgAndDS\obj\Debug\net8.0\refint\AlgAndDS.dll
 D:\PetProjects\AlgAndDS\AlgAndDS\obj\Debug\net8.0\AlgAndDS.pdb
 D:\PetProjects\AlgAndDS\AlgAndDS\obj\Debug\net8.0\AlgAndDS.genruntimeconfig.cache
 D:\PetProjects\AlgAndDS\AlgAndDS\obj\Debug\net8.0\ref\AlgAndDS.dll
+D:\PetProjects\AlgAndDS\AlgAndDS\obj\Debug\net8.0\AlgAndDS.sourcelink.json
