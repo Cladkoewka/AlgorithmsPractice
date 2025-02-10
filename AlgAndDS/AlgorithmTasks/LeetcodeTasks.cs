@@ -77,4 +77,27 @@ public static class LeetcodeTasks
 
         return root;
     }
+
+    /// <summary>
+    /// 110. Balanced Binary Tree
+    /// https://leetcode.com/problems/balanced-binary-tree/description/
+    /// </summary>
+    /// <param name="root"></param>
+    /// <returns></returns>
+    public static bool IsBalanced(Tree.TreeNode root)
+    {
+        if (root == null)
+            return true;
+        if (Math.Abs(Height(root.Left) - Height(root.Right)) <= 1)
+            return true && IsBalanced(root.Left) && IsBalanced(root.Right);
+        else
+            return false;
+    }
+
+    public static int Height(Tree.TreeNode node)
+    {
+        if (node == null)
+            return 0;
+        return 1 + Math.Max(Height(node.Left), Height(node.Right));
+    }
 }
