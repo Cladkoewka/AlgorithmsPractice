@@ -1,11 +1,12 @@
 ﻿using AlgAndDS.AlgorithmTasks;
 using AlgAndDS.DataStructures;
 
-int?[] treeArray = new int?[] { 3, 9, 20, null, null, 15, 7 };
-Tree.TreeNode tree = Tree.BuildTree(treeArray);
+int[] values = new int[] { 1, 2, 3, 4, 5};
 
-Tree.WriteTreeToConsole(treeArray);
-tree = LeetcodeTasks.InvertTree(tree);
-Tree.WriteTreeToConsole(tree);
+LinkedList.ListNode list = LinkedList.CreateLinkedListFromArray(values);
+
+LinkedList.WriteLinkedListToConsole(list);
+list = LeetcodeTasks.ReverseList(list);
+LinkedList.WriteLinkedListToConsole(list);
 
 

@@ -100,4 +100,22 @@ public static class LeetcodeTasks
             return 0;
         return 1 + Math.Max(Height(node.Left), Height(node.Right));
     }
+    
+    /// <summary>
+    /// 206. Reverse Linked List
+    /// https://leetcode.com/problems/reverse-linked-list/description/
+    /// </summary>
+    /// <param name="head"></param>
+    /// <returns></returns>
+    public static LinkedList.ListNode ReverseList(LinkedList.ListNode head)
+    {
+        LinkedList.ListNode reverse = null;
+        while (head != null)
+        {
+            reverse = new LinkedList.ListNode(head.val, reverse);
+            head = head.next;
+        }
+
+        return reverse;
+    }
 }
