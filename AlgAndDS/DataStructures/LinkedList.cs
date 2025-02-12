@@ -49,5 +49,7 @@ public static class LinkedList
             head = head.next;
         }
         Console.Write("]");
+        
+        Console.WriteLine();
     }
 }

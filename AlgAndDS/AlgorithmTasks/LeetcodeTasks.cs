@@ -118,4 +118,29 @@ public static class LeetcodeTasks
 
         return reverse;
     }
+    
+    public static LinkedList.ListNode MergeTwoLists(LinkedList.ListNode list1, LinkedList.ListNode list2)
+    {
+        LinkedList.ListNode dummy = new LinkedList.ListNode();
+        LinkedList.ListNode resList = dummy;
+        
+
+        while (list1 != null && list2 != null)
+        {
+            if (list1.val <= list2.val)
+            {
+                resList.next = list1;
+                list1 = list1.next;
+            }
+            else
+            {
+                resList.next = list2;
+                list2 = list2.next;
+            }
+            resList = resList.next;
+        }
+        resList.next = list1 ?? list2;
+        return dummy.next;
+
+    }
 }
