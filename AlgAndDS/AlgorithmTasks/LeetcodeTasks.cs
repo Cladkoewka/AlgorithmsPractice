@@ -119,6 +119,13 @@ public static class LeetcodeTasks
         return reverse;
     }
     
+    /// <summary>
+    /// 21. Merge Two Sorted Lists
+    /// https://leetcode.com/problems/merge-two-sorted-lists/description/
+    /// </summary>
+    /// <param name="list1"></param>
+    /// <param name="list2"></param>
+    /// <returns></returns>
     public static LinkedList.ListNode MergeTwoLists(LinkedList.ListNode list1, LinkedList.ListNode list2)
     {
         LinkedList.ListNode dummy = new LinkedList.ListNode();
@@ -141,6 +148,29 @@ public static class LeetcodeTasks
         }
         resList.next = list1 ?? list2;
         return dummy.next;
+    }
 
+    /// <summary>
+    /// 141. Linked List Cycle
+    /// https://leetcode.com/problems/linked-list-cycle/description/
+    /// </summary>
+    /// <param name="head"></param>
+    /// <returns></returns>
+    public static bool HasCycle(LinkedList.ListNode head)
+    {
+        if (head == null)
+            return false;
+
+        LinkedList.ListNode ptr1 = head;
+        LinkedList.ListNode ptr2 = head;
+        while (ptr2 != null && ptr2.next != null)
+        {
+            ptr1 = ptr1.next;
+            ptr2 = ptr2.next.next;
+            if (ptr1 == ptr2)
+                return true;
+        }
+
+        return false;
     }
 }
