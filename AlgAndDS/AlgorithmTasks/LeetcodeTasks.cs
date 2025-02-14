@@ -173,4 +173,69 @@ public static class LeetcodeTasks
 
         return false;
     }
+    
+    /// <summary>
+    /// 143. Reorder List
+    /// https://leetcode.com/problems/reorder-list/description/
+    /// </summary>
+    /// <param name="head"></param>
+    public static void ReorderList(LinkedList.ListNode head)
+    {
+        if (head == null || head.next == null)
+            return;
+
+        LinkedList.ListNode middle = midNode(head);
+        LinkedList.ListNode newHead = middle.next;
+        middle.next = null;
+
+        newHead = reverseLinkedList(newHead);
+
+        LinkedList.ListNode c1 = head;
+        LinkedList.ListNode c2 = newHead;
+        LinkedList.ListNode f1 = null;
+        LinkedList.ListNode f2 = null;
+        
+        while (c1 != null && c2 != null)
+        {
+            f1 = c1.next;
+            f2 = c2.next;
+
+            c1.next = c2;
+            c2.next = f1;
+
+            c1 = f1;
+            c2 = f2;
+        }
+    }
+
+    private static LinkedList.ListNode midNode(LinkedList.ListNode head)
+    {
+        LinkedList.ListNode fast = head;
+        LinkedList.ListNode slow = head;
+
+        while (fast.next != null && fast.next.next != null)
+        {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+
+        return slow;
+    }
+
+    public static LinkedList.ListNode reverseLinkedList(LinkedList.ListNode head)
+    {
+        LinkedList.ListNode prev = null;
+        LinkedList.ListNode curr = head;
+        LinkedList.ListNode next = null;
+
+        while (curr != null)
+        {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        return prev;
+    }
 }
