@@ -238,4 +238,40 @@ public static class LeetcodeTasks
 
         return prev;
     }
+    
+    /// <summary>
+    /// 19. Remove Nth Node From End of List
+    /// https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
+    /// </summary>
+    /// <param name="head"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public static LinkedList.ListNode RemoveNthFromEnd(LinkedList.ListNode head, int n)
+    {
+        LinkedList.ListNode curr = head;
+        int N = 0;
+        
+        while (curr != null)
+        {
+            N++;
+            curr = curr.next;
+        }
+
+        int removeIndex = N - n - 1;
+        curr = head;
+
+        for (int i = 0; i < removeIndex; i++)
+        {
+            curr = curr.next;
+        }
+
+        if (removeIndex == -1)
+            return head.next;
+        else
+        {
+            curr.next = curr.next.next;
+            return head;
+        }
+        
+    }
 }

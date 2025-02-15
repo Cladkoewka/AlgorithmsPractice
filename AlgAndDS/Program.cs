@@ -1,10 +1,10 @@
 ﻿using AlgAndDS.AlgorithmTasks;
 using AlgAndDS.DataStructures;
 
-int[] values1 = new int[] { 1, 2, 3, 4, 5};
+int[] values1 = new int[] { 1, 2};
 
 LinkedList.ListNode list = LinkedList.CreateLinkedListFromArray(values1);
-LeetcodeTasks.ReorderList(list);
+LeetcodeTasks.RemoveNthFromEnd(list, 1);
 
 LinkedList.WriteLinkedListToConsole(list);
 
