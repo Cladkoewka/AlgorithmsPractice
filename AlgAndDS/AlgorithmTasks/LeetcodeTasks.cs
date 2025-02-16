@@ -1,5 +1,4 @@
 using AlgAndDS.DataStructures;
-
 namespace AlgAndDS.AlgorithmTasks;
 
 public static class LeetcodeTasks
@@ -273,5 +272,36 @@ public static class LeetcodeTasks
             return head;
         }
         
+    }
+    
+    /// <summary>
+    /// 138. Copy List with Random Pointer
+    /// https://leetcode.com/problems/copy-list-with-random-pointer/description/
+    /// </summary>
+    /// <param name="head"></param>
+    /// <returns></returns>
+    public static LinkedList.Node CopyRandomList(LinkedList.Node head)
+    {
+        if (head == null)
+            return null;
+
+        Dictionary<LinkedList.Node, LinkedList.Node> oldToNew = new Dictionary<LinkedList.Node, LinkedList.Node>();
+
+        LinkedList.Node curr = head;
+        while (curr != null)
+        {
+            oldToNew[curr] = new LinkedList.Node(curr.val);
+            curr = curr.next;
+        }
+
+        curr = head;
+        while (curr != null)
+        {
+            oldToNew[curr].next = curr.next != null ? oldToNew[curr.next] : null;
+            oldToNew[curr].random = curr.random != null ? oldToNew[curr.random] : null;
+            curr = curr.next;
+        }
+
+        return oldToNew[head];
     }
 }
