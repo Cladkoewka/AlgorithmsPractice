@@ -377,4 +377,34 @@ public static class LeetcodeTasks
 
         return true;
     }
+    
+    /// <summary>
+    /// 128. Longest Consecutive Sequence
+    /// https://leetcode.com/problems/longest-consecutive-sequence/description/
+    /// </summary>
+    /// <param name="nums"></param>
+    /// <returns></returns>
+    public static int LongestConsecutive(int[] nums)
+    {
+        if (nums.Length == 0)
+            return 0;
+
+        HashSet<int> hashSet = new HashSet<int>(nums);
+        int maxLength = 1;
+        foreach (int number in hashSet)
+        {
+            if (hashSet.Contains(number - 1))
+                continue;
+
+            int counter = 1;
+            while (hashSet.Contains(number + counter))
+            {
+                counter++;
+            }
+
+            maxLength = Math.Max(counter, maxLength);
+        }
+
+        return maxLength;
+    }
 }
