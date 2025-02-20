@@ -462,4 +462,21 @@ public static class LeetcodeTasks
 
         return answer;
     }
+    
+    /// <summary>
+    /// 1980. Find Unique Binary String
+    /// https://leetcode.com/problems/find-unique-binary-string/description
+    /// </summary>
+    /// <param name="nums"></param>
+    /// <returns></returns>
+    public static string FindDifferentBinaryString(string[] nums) {
+        char[] res = new char[nums.Length];
+
+        for(int i = 0; i < nums.Length; i++)
+        {
+            res[i] = nums[i][i] == '0' ? '1' : '0';
+        }
+
+        return new string(res);
+    }
 }
