@@ -407,4 +407,38 @@ public static class LeetcodeTasks
 
         return maxLength;
     }
+    
+    /// <summary>
+    /// 20. Valid Parentheses
+    /// https://leetcode.com/problems/valid-parentheses/description/
+    /// </summary>
+    /// <param name="s"></param>
+    /// <returns></returns>
+    public static bool IsValid(string s) {
+        Stack<char> stack = new Stack<char>();
+        foreach(var c in s)
+        {
+            if(c == '(' || c == '{' || c == '[')
+                stack.Push(c);
+            else
+            {
+                if (stack.Count == 0)
+                    return false;
+                
+                char lastElem = stack.Pop();
+                
+                if (c == ')' && lastElem != '(')
+                    return false;
+                if (c == ']' && lastElem != '[')
+                    return false;
+                if (c == '}' && lastElem != '{')
+                    return false;
+            }
+        }
+
+        if (stack.Count == 0)
+            return true;
+
+        return false;
+    }
 }
