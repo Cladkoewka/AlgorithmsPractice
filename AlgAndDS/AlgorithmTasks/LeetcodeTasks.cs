@@ -436,9 +436,30 @@ public static class LeetcodeTasks
             }
         }
 
-        if (stack.Count == 0)
-            return true;
+        return (stack.Count == 0);
+    }
+    
+    /// <summary>
+    /// 739. Daily Temperatures
+    /// https://leetcode.com/problems/daily-temperatures/description/
+    /// </summary>
+    /// <param name="temperatures"></param>
+    /// <returns></returns>
+    public static int[] DailyTemperatures(int[] temperatures)
+    {
+        Stack<int> stack = new Stack<int>();
+        int[] answer = new int[temperatures.Length];
 
-        return false;
+        for (int i = 0; i < temperatures.Length; i++)
+        {
+            while (stack.Count > 0 && temperatures[stack.Peek()] < temperatures[i])
+            {
+                int index = stack.Pop();
+                answer[index] = i - index;
+            }
+            stack.Push(i);
+        }
+
+        return answer;
     }
 }
