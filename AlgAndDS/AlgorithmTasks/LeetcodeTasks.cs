@@ -479,4 +479,29 @@ public static class LeetcodeTasks
 
         return new string(res);
     }
+
+    /// <summary>
+    /// 1261. Find Elements in a Contaminated Binary Tree
+    /// https://leetcode.com/problems/find-elements-in-a-contaminated-binary-tree/description/
+    /// </summary>
+    public class FindElementsInContaminatedTree
+    {
+        private HashSet<int> set;
+
+        public FindElementsInContaminatedTree(Tree.TreeNode node)
+        {
+            set = new HashSet<int>();
+            RecoverTree(node, 0);
+        }
+
+        public void RecoverTree(Tree.TreeNode root, int value)
+        {
+            if (root == null) return;
+            set.Add(value);
+            root.Value = value;
+            RecoverTree(root.Left, 2 * value + 1);
+            RecoverTree(root.Right, 2 * value + 2);
+            
+        }
+    }
 }
