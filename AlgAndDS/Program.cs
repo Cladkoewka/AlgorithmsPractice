@@ -6,7 +6,7 @@ public class Program
 {
     public static void Main()
     {
-        TestDoublyList();
+        TestStack();
     }
 
     public static void TestLinkedList()
@@ -49,5 +49,20 @@ public class Program
         
         var nodeAtIndex = list.GetAtIndex(2);
         Console.WriteLine(nodeAtIndex != null ? $"Элемент на индексе 2: {nodeAtIndex.Value}" : "Элемент не найден");
+    }
+    
+    static void TestStack()
+    {
+        var stack = new AlgAndDS.DataStructuresRealisations.Stack<int>();
+        stack.Push(10);
+        stack.Push(20);
+        stack.Push(30);
+
+        Console.WriteLine($"Peek: {stack.Peek()}");
+
+        while (!stack.IsEmpty)
+        {
+            Console.WriteLine($"Pop: {stack.Pop()}");
+        }
     }
 }
