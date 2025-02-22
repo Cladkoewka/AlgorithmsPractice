@@ -504,4 +504,44 @@ public static class LeetcodeTasks
             
         }
     }
+    
+    /// <summary>
+    /// 1028. Recover a Tree From Preorder Traversal
+    /// https://leetcode.com/problems/recover-a-tree-from-preorder-traversal/description/?envType=daily-question&envId=2025-02-22
+    /// </summary>
+    /// <param name="traversal"></param>
+    /// <returns></returns>
+    public static Tree.TreeNode RecoverFromPreorder(string traversal) {
+        List<Tree.TreeNode> levels = new List<Tree.TreeNode>();
+        for (int i = 0; i < traversal.Length;)
+        {
+            int level = 0;
+            while (traversal[i] == '-')
+            {
+                i++;
+                level++;
+            }
+
+            int val = 0;
+            while(i < traversal.Length && traversal[i] != '-') 
+                val = val * 10 + traversal[i++] - '0';
+
+            var node = new Tree.TreeNode(val);
+            if (level < levels.Count)
+                levels[level] = node;
+            else
+                levels.Add(node);
+
+            if (level > 0)
+            {
+                var parent = levels[level - 1];
+                if (parent.Left != null)
+                    parent.Right = node;
+                else
+                    parent.Left = node;
+            }
+        }
+
+        return levels[0];
+    }
 }
