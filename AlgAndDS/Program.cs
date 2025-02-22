@@ -6,7 +6,7 @@ public class Program
 {
     public static void Main()
     {
-        TestStack();
+        TestFixedStack();
     }
 
     public static void TestLinkedList()
@@ -64,5 +64,24 @@ public class Program
         {
             Console.WriteLine($"Pop: {stack.Pop()}");
         }
+    }
+    
+    static void TestFixedStack()
+    {
+        var stack = new FixedStack<int>(3);
+        
+        stack.Push(10);
+        stack.Push(20);
+        stack.Push(30);
+        
+        // stack.Push(40); // Ошибка: стек заполнен
+
+        Console.WriteLine($"Peek: {stack.Peek()}"); 
+
+        while (!stack.IsEmpty)
+        {
+            Console.WriteLine($"Pop: {stack.Pop()}");
+        }
+
     }
 }
