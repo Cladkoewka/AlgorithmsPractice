@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AlgAndDS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74fa9be7e189b356ecc38c329beeb5c729ed6e1a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a1beac050b942671b637680b27841a791738d4b6")]
 [assembly: System.Reflection.AssemblyProductAttribute("AlgAndDS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AlgAndDS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

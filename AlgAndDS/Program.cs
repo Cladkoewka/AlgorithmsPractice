@@ -1,11 +1,30 @@
 ﻿using AlgAndDS.AlgorithmTasks;
 using AlgAndDS.DataStructures;
+using AlgAndDS.DataStructuresRealisations;
 
-int[] values1 = new int[] { 1, 2};
+public class Program
+{
+    public static void Main()
+    {
+        TestLinkedList();
+    }
 
-LinkedList.ListNode list = LinkedList.CreateLinkedListFromArray(values1);
-LeetcodeTasks.RemoveNthFromEnd(list, 1);
+    public static void TestLinkedList()
+    {
+        var list = new AlgAndDS.DataStructuresRealisations.LinkedList<int>();
 
-LinkedList.WriteLinkedListToConsole(list);
+        list.AddLast(1);
+        list.AddLast(2);
+        list.AddLast(3);
+        list.Print();
 
+        list.AddFirst(0);
+        list.Print();
 
+        list.Remove(2);
+        list.Print();
+
+        var node = list.Find(3);
+        Console.WriteLine(node != null ? $"Найден узел: {node.Value}" : "Элемент не найден");
+    }
+}
