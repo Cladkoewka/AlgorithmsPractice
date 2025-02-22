@@ -6,7 +6,7 @@ public class Program
 {
     public static void Main()
     {
-        TestLinkedList();
+        TestDoublyList();
     }
 
     public static void TestLinkedList()
@@ -26,5 +26,28 @@ public class Program
 
         var node = list.Find(3);
         Console.WriteLine(node != null ? $"Найден узел: {node.Value}" : "Элемент не найден");
+    }
+    
+    static void TestDoublyList()
+    {
+        var list = new DoublyLinkedList<int>();
+
+        list.AddLast(1);
+        list.AddLast(2);
+        list.AddLast(3);
+        list.PrintForward();  
+        list.PrintBackward(); 
+
+        list.AddFirst(0);
+        list.PrintForward(); 
+
+        list.Remove(2);
+        list.PrintForward();  
+
+        var node = list.Find(3);
+        Console.WriteLine(node != null ? $"Найден узел: {node.Value}" : "Элемент не найден");
+        
+        var nodeAtIndex = list.GetAtIndex(2);
+        Console.WriteLine(nodeAtIndex != null ? $"Элемент на индексе 2: {nodeAtIndex.Value}" : "Элемент не найден");
     }
 }
