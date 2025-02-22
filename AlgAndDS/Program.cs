@@ -1,4 +1,5 @@
-﻿using AlgAndDS.AlgorithmTasks;
+﻿using AlgAndDS.Algorithms;
+using AlgAndDS.AlgorithmTasks;
 using AlgAndDS.DataStructures;
 using AlgAndDS.DataStructuresRealisations;
 
@@ -6,8 +7,15 @@ public class Program
 {
     public static void Main()
     {
-        TestHashTable();
+        int[] arr = { 5, 3, 8, 4, 2 };
+        Console.WriteLine("Исходный массив: " + string.Join(", ", arr));
+
+        SortingAlgorithms.BubbleSort(arr);
+
+        Console.WriteLine("Отсортированный массив: " + string.Join(", ", arr));
     }
+
+#region Data Structures Tests
 
     public static void TestLinkedList()
     {
@@ -117,4 +125,7 @@ public class Program
         hashTable.Remove("Alice");
         Console.WriteLine($"Contains 'Alice' after removal: {hashTable.Contains("Alice")}");
     }
+
+#endregion
+    
 }
