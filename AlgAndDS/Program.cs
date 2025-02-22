@@ -6,7 +6,7 @@ public class Program
 {
     public static void Main()
     {
-        TestFixedStack();
+        TestHashTable();
     }
 
     public static void TestLinkedList()
@@ -83,5 +83,38 @@ public class Program
             Console.WriteLine($"Pop: {stack.Pop()}");
         }
 
+    }
+    
+    static void TestQueue()
+    {
+        var queue = new AlgAndDS.DataStructuresRealisations.Queue<int>();
+        
+        queue.Enqueue(10);
+        queue.Enqueue(20);
+        queue.Enqueue(30);
+
+        Console.WriteLine($"Peek: {queue.Peek()}"); // 10
+
+        while (!queue.IsEmpty)
+        {
+            Console.WriteLine($"Dequeue: {queue.Dequeue()}");
+        }
+
+        // queue.Dequeue(); // Ошибка: очередь пуста
+    }
+    
+    static void TestHashTable()
+    {
+        var hashTable = new HashTable<string, int>();
+
+        hashTable.Insert("Alice", 25);
+        hashTable.Insert("Bob", 30);
+        hashTable.Insert("Charlie", 35);
+
+        Console.WriteLine($"Alice: {hashTable.Get("Alice")}");
+        Console.WriteLine($"Contains 'Bob': {hashTable.Contains("Bob")}");
+
+        hashTable.Remove("Alice");
+        Console.WriteLine($"Contains 'Alice' after removal: {hashTable.Contains("Alice")}");
     }
 }
