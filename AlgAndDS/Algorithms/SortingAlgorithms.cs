@@ -104,4 +104,33 @@ public static class SortingAlgorithms
         while (i2 < n2) 
             arr[k++] = rightArray[i2++];
     }
+
+    public static void QuickSort(int[] arr, int left, int right)
+    {
+        if (left < right)
+        {
+            int pivotIndex = Partititon(arr, left, right);
+            
+            QuickSort(arr, left, pivotIndex - 1);
+            QuickSort(arr, pivotIndex + 1, right);
+        }
+    }
+
+    private static int Partititon(int[] arr, int left, int right)
+    {
+        int pivot = arr[right];
+        int i = left - 1;
+
+        for (int j = left; j < right; j++)
+        {
+            if (arr[j] < pivot)
+            {
+                i++;
+                (arr[i], arr[j]) = (arr[j], arr[i]);
+            }
+        }
+        
+        (arr[i + 1], arr[right]) = (arr[right], arr[i + 1]);
+        return i + 1;
+    }
 }
