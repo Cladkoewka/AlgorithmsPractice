@@ -10,7 +10,7 @@ public class Program
         int[] arr = { 5, 3, 8, 4, 2 };
         Console.WriteLine("Исходный массив: " + string.Join(", ", arr));
 
-        SortingAlgorithms.QuickSort(arr, 0, arr.Length - 1);
+        SortingAlgorithms.HeapSort(arr);
 
         Console.WriteLine("Отсортированный массив: " + string.Join(", ", arr));
     }
